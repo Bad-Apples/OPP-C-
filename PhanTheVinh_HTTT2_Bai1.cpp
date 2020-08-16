@@ -1,28 +1,48 @@
 #include<iostream>
 #include<math.h>
-
 using namespace std;
-
-class Hinhtron
+class HCN
 {
+private:
+    float D,R;
 public:
-    float r;
-    float chuvi()
-    {
-        return 2*r*M_PI;
-    }
-    float dientich()
-    {
-        return r*r*M_PI;
-    }
+    void NHAP();
+    void VE();
+    float DIENTICH();
+    float CHUVI();
 };
+    void HCN::NHAP()
+    {
+        cout<<"Nhap chieu dai HCN: ";
+        cin>>D;
+        cout<<"Nhap chieu rong HCN: ";
+        cin>>R;
+    }
+    void HCN::VE()
+    {
+        for(int i=0; i<D; i++)
+    {
+        for(int j=0; j<R; j++)
+            cout<<" * ";
+            cout<<endl;
+    }
+    }
+    float HCN::DIENTICH()
+    {
+        return D*R;
+    }
+    float HCN::CHUVI()
+    {
+        return 2*(D+R);
+    }
+
+
 int main()
 {
-    Hinhtron a;
-    cout<<"Nhap ban kinh hinh tron: ";
-    cin>>a.r;
-    cout<<"Chu vi hinh tron = "<<a.chuvi()<<"(cm)"<<endl;
-    cout<<"Dien tich hinh tron = "<<a.dientich()<<"(cm2)";
+    HCN a;
+    a.NHAP();
+    a.VE();
+    cout<<"DIEN TICH HCN = "<<a.DIENTICH()<<endl;
+    cout<<"CHU VI HCN = "<<a.CHUVI();
     return 0;
 }
-
